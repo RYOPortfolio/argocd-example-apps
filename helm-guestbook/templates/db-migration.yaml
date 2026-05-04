@@ -6,9 +6,9 @@ metadata:
     argocd.argoproj.io/hook: PreSync
     argocd.argoproj.io/hook-delete-policy: BeforeHookCreation, Succeeded
 spec:
+  backoffLimit: 2
   template:
     spec:
-      backoffLimit: 2
       restartPolicy: Never
       containers:
       - name: migration
